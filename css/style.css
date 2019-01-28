@@ -6648,32 +6648,6 @@ hr {
     @media only screen and (max-width: 767px) {
       .footer__col-title {
         margin-bottom: 30px; } }
-  .footer__upper {
-    position: absolute;
-    z-index: 2;
-    top: -1px;
-    width: 102%;
-    min-width: 1926px;
-    height: 170px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    background-image: url("../img/img-arc-down-md.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: bottom center; }
-    @media only screen and (max-width: 767px) {
-      .footer__upper {
-        bottom: 0;
-        min-width: 776px;
-        height: 68px;
-        background-image: url("../img/img-arc-down-sm.png"); } }
-    @media only screen and (max-width: 360px) {
-      .footer__upper {
-        bottom: 0;
-        min-width: 370px;
-        height: 34px;
-        background-image: url("../img/img-arc-down-xs.png"); } }
 
 .custom-iw {
   border: none;
