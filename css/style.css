@@ -6597,14 +6597,17 @@ hr {
   @media only screen and (max-width: 767px) {
     .footer {
       margin-top: 82px; } }
-  .footer__map {
+  .footer__map__wrapper {
     height: 758px; }
     @media only screen and (max-width: 1229px) {
-      .footer__map {
+      .footer__map__wrapper {
         height: 730px; } }
     @media only screen and (max-width: 767px) {
-      .footer__map {
+      .footer__map__wrapper {
         height: 455px; } }
+    .footer__map {
+      width: 100%; 
+      border: none; }
   .footer__bottom {
     height: 218px;
     background-color: #298aca;
