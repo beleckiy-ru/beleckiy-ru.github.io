@@ -15,5 +15,6 @@ jobs:
           accessKeyId: ${{ secrets.S3_ACCESS_KEY_ID }}
           secretAccessKey: ${{ secrets.S3_SECRET_ACCESS_KEY }}
           bucketName: ${{ vars.S3_BUCKET }}
+          include: '*.*'
           sourceDir: ./
           clear: true
