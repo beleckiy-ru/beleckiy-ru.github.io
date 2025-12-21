@@ -3,6 +3,7 @@ on:
   workflow_dispatch:
 jobs:
   deploy:
+    environment: production-s3
     runs-on: ubuntu-latest
     strategy:
       matrix:
