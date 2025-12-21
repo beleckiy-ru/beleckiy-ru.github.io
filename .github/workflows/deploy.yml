@@ -5,17 +5,8 @@ jobs:
   deploy:
     environment: production-s3
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [24.x]
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v6
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Install NPM dependencies
-        run: npm install
-
       - uses: MrMeison/yc-object-storage-action@main
         with:
           accessKeyId: ${{ secrets.S3_ACCESS_KEY_ID }}
