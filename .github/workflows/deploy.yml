@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      - run: |
+          pwd
+          ls -la
       - uses: MrMeison/yc-object-storage-action@main
         with:
           accessKeyId: ${{ secrets.S3_ACCESS_KEY_ID }}
