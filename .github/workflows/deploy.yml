@@ -1,0 +1,25 @@
+name: Deploy
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install NPM dependencies
+        run: npm ci
+
+      - uses: MrMeison/yc-object-storage-action@main
+        with:
+          accessKeyId: ${{ secrets.S3_ACCESS_KEY_ID }}
+          secretAccessKey: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+          bucketName: ${{ vars.S3_BUCKET }}
+          sourceDir: .
+          exclude: ./.github/**/*.*
+          clear: true
