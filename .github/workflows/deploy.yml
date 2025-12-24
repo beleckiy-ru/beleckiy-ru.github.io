@@ -7,9 +7,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - run: |
+
+      - name: Install dependencies
+        run: |
+          npm install -g imagemin-cli imagemin-mozjpeg imagemin-pngquant
+          sudo apt-get install -y optipng jpegoptim  
+
+      - name: Optimize images
+        run: |
+          find . -type f \( -name "*.jpg" -o -name "*.jpeg" \) -not -path "./node_modules/*" -exec jpegoptim --max=85 --strip-all {} \;
+          find . -type f -name "*.png" -not -path "./node_modules/*" -exec optipng -o2 {} \;
+
+      - name: Minify CSS
+        run: |
+          npm install -g clean-css-cli
+          find ./css -name "*.css" -exec cleancss -o {} {} \;
+
+      - name: Minify JavaScript
+        run: |
+          npm install -g uglify-js
+          find ./js -name "*.js" -not -name "*.min.js" -exec uglifyjs {} -o {}.min.js \;
+
+      - name: Check directory content
+        run: |
           pwd
           ls -la
+          ls -la css
+          ls -la img
+          ls -la js
+
       - uses: MrMeison/yc-object-storage-action@main
         with:
           accessKeyId: ${{ secrets.S3_ACCESS_KEY_ID }}
