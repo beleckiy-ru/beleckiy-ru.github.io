@@ -22,3 +22,5 @@ jobs:
             img/**/*.*
             js/**/*.*
             index.html
+            robots.txt
+            sitemap.xml
