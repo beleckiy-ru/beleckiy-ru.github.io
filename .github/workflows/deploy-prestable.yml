@@ -52,5 +52,6 @@ jobs:
             img/**/*.*
             js/**/*.*
             index.html
+            services/*.html
             robots.txt
             sitemap.xml

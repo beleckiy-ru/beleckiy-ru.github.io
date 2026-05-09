@@ -6940,3 +6940,147 @@ hr {
       opacity: 1; }
       .slick-dots > li.slick-active > button {
         border-color: #2c8eca; }
+
+/* --- Standalone service pages (/services/*.html) --- */
+.service-top {
+  background-image: url("../img/bg-header-md.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 28px 0 32px;
+  position: relative;
+  overflow: hidden; }
+  .service-top .container {
+    position: relative; }
+  .service-top__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px; }
+  .service-top__back {
+    font-family: "Fira Sans Book", sans-serif;
+    font-size: 16px;
+    margin-bottom: 10px; }
+    .service-top__back a {
+      color: #2c8eca !important;
+      text-decoration: none !important; }
+      .service-top__back a:hover {
+        text-decoration: underline !important; }
+  .service-top__brand {
+    font-size: 36px;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 1.1;
+    color: white;
+    margin: 0; }
+    .service-top__brand a {
+      color: white !important;
+      text-decoration: none !important; }
+    .service-top__brand b {
+      font-weight: 600; }
+    @media only screen and (max-width: 767px) {
+      .service-top__brand {
+        font-size: 26px; } }
+  .service-top__subtitle {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: white;
+    margin: 12px 0 0;
+    font-weight: 300;
+    opacity: 0.95; }
+  .service-top__phones {
+    text-align: right; }
+    @media only screen and (max-width: 767px) {
+      .service-top__phones {
+        text-align: left;
+        width: 100%; } }
+  .service-top__phone-link {
+    text-decoration: none !important;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 16px; }
+    .service-top__phone-link img {
+      width: 48px;
+      height: auto; }
+      @media only screen and (max-width: 767px) {
+        .service-top__phone-link img {
+          width: 36px; } }
+  .service-top__phone-numbers {
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 22px;
+    font-family: "Fira Sans Book", sans-serif; }
+    @media only screen and (max-width: 767px) {
+      .service-top__phone-numbers {
+        font-size: 18px; } }
+    .service-top__phone-numbers a {
+      display: block;
+      color: #2c8eca !important; }
+      .service-top__phone-numbers a:first-of-type {
+        margin-bottom: 6px; }
+
+.service-breadcrumb {
+  max-width: 865px;
+  margin: 0 auto 14px;
+  padding: 0 15px;
+  font-size: 14px;
+  font-family: "Fira Sans Book", sans-serif;
+  color: #3f3f3f; }
+  .service-breadcrumb a {
+    color: #2c8eca !important;
+    text-decoration: none !important; }
+  .service-breadcrumb a:hover {
+    text-decoration: underline !important; }
+
+.service-page-main {
+  padding: 40px 0 50px;
+  background-color: #f5f5f5; }
+
+.service-page__panel {
+  background-color: white;
+  box-shadow: 0 0 147px rgba(0, 0, 0, 0.43);
+  max-width: 835px;
+  margin: 0 auto;
+  padding: 22px;
+  position: relative; }
+  @media only screen and (max-width: 1229px) {
+    .service-page__panel {
+      max-width: 623px; } }
+  @media only screen and (max-width: 767px) {
+    .service-page__panel {
+      max-width: 100%;
+      padding: 16px; } }
+
+.service-page .slider {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  top: auto !important;
+  right: auto !important; }
+  .service-page .slider::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .service-page .slider .slider__item {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important; }
+  .service-page .slider .slider__img {
+    float: left;
+    height: auto; }
+    @media only screen and (max-width: 767px) {
+      .service-page .slider .slider__img {
+        float: none;
+        width: 100%; }
+        .service-page .slider .slider__img > img {
+          width: 100%;
+          height: auto;
+          max-height: none; } }
+  .service-page .slider .slider__text {
+    float: right; }
+    @media only screen and (max-width: 767px) {
+      .service-page .slider .slider__text {
+        float: none;
+        width: 100%;
+        margin-top: 15px; } }
