@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 jobs:
   deploy:
-    environment: prestable-s3
+    environment: production-s3
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
