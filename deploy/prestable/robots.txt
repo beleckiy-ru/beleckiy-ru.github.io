@@ -1,0 +1,3 @@
+# Только для prestable.beleckiy.ru (не используется на основном сайте)
+User-agent: *
+Disallow: /
