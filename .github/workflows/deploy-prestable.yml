@@ -41,7 +41,7 @@ jobs:
           ls -la
           ls -la css
           ls -la img
-          ls -la js
+          ls -la services
 
       - name: Prestable robots.txt (noindex)
         run: cp deploy/prestable/robots.txt robots.txt

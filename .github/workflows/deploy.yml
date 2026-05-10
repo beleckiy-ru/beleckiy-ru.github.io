@@ -40,7 +40,7 @@ jobs:
           ls -la
           ls -la css
           ls -la img
-          ls -la js
+          ls -la services
 
       - uses: MrMeison/yc-object-storage-action@main
         with:
