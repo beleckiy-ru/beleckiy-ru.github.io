@@ -10,24 +10,24 @@
     <meta name="language" content="Russian">
 
     <link rel="icon" type="image/png" href="/img/favicon.png" />
-    <link rel="canonical" href="https://beleckiy.ru/services/endoskopicheskaya-hirurgiya.html" />
+    <link rel="canonical" href="https://beleckiy.ru/services/{{slug}}.html" />
 
-    <title>Эндоскопическая хирургия в Красноярске | Белецкий Игорь Иванович</title>
-    <meta name="description" content="Лапароскопическое удаление желчного пузыря, иссечение эпителиально-копчикового хода. Хирург Белецкий И. И., Красноярск. Запись: +7 (391) 202-87-84.">
+    <title>{{title}}</title>
+    <meta name="description" content="{{metaDescription}}">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Белецкий И. И. — пластический хирург">
     <meta property="og:locale" content="ru_RU">
-    <meta property="og:title" content="Эндоскопическая хирургия в Красноярске — Белецкий Игорь Иванович">
-    <meta property="og:description" content="Лапароскопические операции с коротким реабилитационным периодом и малым сроком пребывания в клинике.">
-    <meta property="og:image" content="https://beleckiy.ru/img/img-slider-5-md.png">
-    <meta property="og:image:alt" content="Эндоскопическая (лапароскопическая) хирургия">
-    <meta property="og:url" content="https://beleckiy.ru/services/endoskopicheskaya-hirurgiya.html">
+    <meta property="og:title" content="{{ogTitle}}">
+    <meta property="og:description" content="{{ogDescription}}">
+    <meta property="og:image" content="https://beleckiy.ru{{image}}">
+    <meta property="og:image:alt" content="{{alt}}">
+    <meta property="og:url" content="https://beleckiy.ru/services/{{slug}}.html">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Эндоскопическая хирургия в Красноярске — Белецкий Игорь Иванович">
-    <meta name="twitter:description" content="Эндоскопическая хирургия в Красноярске. Запись по тел. +7 (391) 202-87-84.">
-    <meta name="twitter:image" content="https://beleckiy.ru/img/img-slider-5-md.png">
+    <meta name="twitter:title" content="{{ogTitle}}">
+    <meta name="twitter:description" content="{{twitterDescription}}">
+    <meta name="twitter:image" content="https://beleckiy.ru{{image}}">
 
     <link rel="preconnect" href="https://mc.yandex.ru">
     <link rel="preconnect" href="https://www.google.com">
@@ -44,30 +44,30 @@
       "@graph": [
         {
           "@type": "BreadcrumbList",
-          "@id": "https://beleckiy.ru/services/endoskopicheskaya-hirurgiya.html#breadcrumb",
+          "@id": "https://beleckiy.ru/services/{{slug}}.html#breadcrumb",
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://beleckiy.ru/" },
             { "@type": "ListItem", "position": 2, "name": "Услуги", "item": "https://beleckiy.ru/#services" },
-            { "@type": "ListItem", "position": 3, "name": "Эндоскопическая хирургия", "item": "https://beleckiy.ru/services/endoskopicheskaya-hirurgiya.html" }
+            { "@type": "ListItem", "position": 3, "name": "{{name}}", "item": "https://beleckiy.ru/services/{{slug}}.html" }
           ]
         },
         {
           "@type": "MedicalProcedure",
-          "@id": "https://beleckiy.ru/services/endoskopicheskaya-hirurgiya.html#procedure",
-          "name": "Эндоскопическая хирургия",
-          "description": "Удаление желчного пузыря лапароскопическим доступом даже при условии острого холецистита. Нахождение в клинике 1-2 дня. Иссечение эпителиально-копчикового хода по оригинальной методике, позволяющей пациенту вставать и двигаться через 6-12 часов после операции. Нахождение в клинике не более суток. Сокращение реабилитационного периода до 2-3 недель.",
-          "image": "https://beleckiy.ru/img/img-slider-5-md.png",
-          "url": "https://beleckiy.ru/services/endoskopicheskaya-hirurgiya.html",
+          "@id": "https://beleckiy.ru/services/{{slug}}.html#procedure",
+          "name": "{{name}}",
+          "description": "{{schemaDescription}}",
+          "image": "https://beleckiy.ru{{image}}",
+          "url": "https://beleckiy.ru/services/{{slug}}.html",
           "provider": { "@id": "https://beleckiy.ru/#physician" }
         },
         {
           "@type": "WebPage",
-          "@id": "https://beleckiy.ru/services/endoskopicheskaya-hirurgiya.html#webpage",
-          "url": "https://beleckiy.ru/services/endoskopicheskaya-hirurgiya.html",
-          "name": "Эндоскопическая хирургия — Белецкий Игорь Иванович",
+          "@id": "https://beleckiy.ru/services/{{slug}}.html#webpage",
+          "url": "https://beleckiy.ru/services/{{slug}}.html",
+          "name": "{{name}} — Белецкий Игорь Иванович",
           "isPartOf": { "@id": "https://beleckiy.ru/#website" },
-          "breadcrumb": { "@id": "https://beleckiy.ru/services/endoskopicheskaya-hirurgiya.html#breadcrumb" },
-          "about": { "@id": "https://beleckiy.ru/services/endoskopicheskaya-hirurgiya.html#procedure" }
+          "breadcrumb": { "@id": "https://beleckiy.ru/services/{{slug}}.html#breadcrumb" },
+          "about": { "@id": "https://beleckiy.ru/services/{{slug}}.html#procedure" }
         }
       ]
     }
@@ -99,20 +99,19 @@
 <main class="service-page-main">
     <div class="container">
         <nav class="service-breadcrumb" aria-label="Навигация по сайту">
-            <a href="/">Главная</a> › <a href="/#services">Услуги</a> › <span aria-current="page">Эндоскопическая хирургия</span>
+            <a href="/">Главная</a> › <a href="/#services">Услуги</a> › <span aria-current="page">{{name}}</span>
         </nav>
         <div class="service-page__panel">
             <div class="slider">
                 <div class="slider__item">
                     <div class="slider__img">
-                        <img src="/img/img-slider-5-md.png" alt="Эндоскопическая (лапароскопическая) хирургия" loading="lazy">
+                        <img src="{{image}}" alt="{{alt}}" loading="lazy">
                         <hr class="slider__hr">
                     </div>
                     <div class="slider__text">
-                        <h1 class="slider__text-title">Эндоскопическая хирургия</h1>
+                        <h1 class="slider__text-title">{{name}}</h1>
                         <div class="slider__text-info">
-                            Удаление желчного пузыря лапароскопическим доступом даже при условии острого холецистита. Нахождение в клинике 1-2 дня.<br>
-Иссечение эпителиально-копчикового хода по оригинальной методике, позволяющей пациенту вставать и двигаться через 6-12 часов после операции. Нахождение в клинике не более суток. Сокращение реабилитационного периода до 2-3 недель.
+                            {{bodyHtml}}
                         </div>
                         <div class="slider__text-footer">
                             Запишитесь на приём к специалисту:

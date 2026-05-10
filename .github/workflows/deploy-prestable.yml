@@ -4,30 +4,36 @@ on:
   workflow_dispatch:
 jobs:
   deploy:
-    environment: production-s3
+    environment: prestable-s3
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
 
       - name: Install dependencies
         run: |
-          npm install -g imagemin-cli imagemin-mozjpeg imagemin-pngquant
-          sudo apt-get install -y optipng jpegoptim
+          sudo apt-get update
+          sudo apt-get install -y optipng jpegoptim webp
+          npm install -g clean-css-cli html-minifier-terser
+
+      - name: Build service pages from template
+        run: node tools/build-services.mjs
 
       - name: Optimize images
         run: |
-          find . -type f \( -name "*.jpg" -o -name "*.jpeg" \) -not -path "./node_modules/*" -exec jpegoptim --max=85 --strip-all {} \;
-          find . -type f -name "*.png" -not -path "./node_modules/*" -exec optipng -o2 {} \;
+          find ./img -type f \( -name "*.jpg" -o -name "*.jpeg" \) -exec jpegoptim --max=85 --strip-all {} \;
+          find ./img -type f -name "*.png" -exec optipng -o2 {} \;
 
-      - name: Minify CSS
-        run: |
-          npm install -g clean-css-cli
-          find ./css -name "*.css" -exec cleancss -o {} {} \;
+      - name: Minify CSS (in-place)
+        run: find ./css -name "*.css" -exec cleancss -o {} {} \;
 
-      - name: Minify JavaScript
+      - name: Minify HTML (in-place)
         run: |
-          npm install -g uglify-js
-          find ./js -name "*.js" -not -name "*.min.js" -exec uglifyjs {} -o {}.min.js \;
+          for f in index.html services/*.html; do
+            html-minifier-terser \
+              --collapse-whitespace --remove-comments \
+              --minify-css true --minify-js true \
+              -o "$f" "$f"
+          done
 
       - name: Check directory content
         run: |
@@ -50,7 +56,6 @@ jobs:
             css/**/*.*
             fonts/**/*.*
             img/**/*.*
-            js/**/*.*
             index.html
             services/*.html
             robots.txt
