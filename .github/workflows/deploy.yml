@@ -34,25 +34,26 @@ jobs:
               -o "$f" "$f"
           done
 
+      - name: Stage files for upload
+        run: |
+          mkdir -p _site
+          cp -r css fonts img services _site/
+          cp index.html robots.txt sitemap.xml _site/
+
       - name: Check directory content
         run: |
           pwd
-          ls -la
-          ls -la css
-          ls -la img
-          ls -la services
+          ls -la _site
+          ls -la _site/css
+          ls -la _site/img
+          ls -la _site/services
 
-      - uses: MrMeison/yc-object-storage-action@main
-        with:
-          accessKeyId: ${{ secrets.S3_ACCESS_KEY_ID }}
-          secretAccessKey: ${{ secrets.S3_SECRET_ACCESS_KEY }}
-          bucketName: ${{ vars.S3_BUCKET }}
-          clear: true
-          include: |
-            css/**/*.*
-            fonts/**/*.*
-            img/**/*.*
-            index.html
-            services/*.html
-            robots.txt
-            sitemap.xml
+      - name: Sync to Yandex Object Storage
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.S3_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ru-central1
+        run: |
+          aws s3 sync _site/ s3://${{ vars.S3_BUCKET }}/ \
+            --delete \
+            --endpoint-url https://storage.yandexcloud.net
