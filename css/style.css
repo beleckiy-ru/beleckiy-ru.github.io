@@ -6150,7 +6150,7 @@ hr {
     background-color: #2c8eca; }
 
 .header {
-  background-image: url("../img/bg-header-md.jpg");
+  background-image: url("../img/bg-header-md.webp");
   height: 942px;
   background-position: center;
   background-repeat: no-repeat;
@@ -6376,7 +6376,7 @@ hr {
           margin-bottom: 15px; } }
   .about__panel {
     height: 435px;
-    background-image: url("../img/bg-about.jpg");
+    background-image: url("../img/bg-about.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -6485,7 +6485,7 @@ hr {
 
 .phone {
   height: 306px;
-  background-image: url("../img/bg-phone.png");
+  background-image: url("../img/bg-phone.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -6944,7 +6944,7 @@ hr {
 
 /* --- Standalone service pages (/services/*.html) --- */
 .service-top {
-  background-image: url("../img/bg-header-md.jpg");
+  background-image: url("../img/bg-header-md.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
