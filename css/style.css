@@ -6112,7 +6112,6 @@ h2 {
   font-weight: 400;
   line-height: 70px;
   position: relative;
-  text-transform: uppercase;
   display: block; }
   @media only screen and (max-width: 1229px) {
     h2 {
@@ -6173,7 +6172,8 @@ hr {
   .header__phone-img {
     display: inline-block;
     vertical-align: middle;
-    margin-right: 35px; }
+    margin-right: 35px;
+    height: auto; }
     @media only screen and (max-width: 1229px) {
       .header__phone-img {
         width: 68px;
@@ -6252,6 +6252,7 @@ hr {
         margin-top: 72px; } }
   .header__img {
     width: 680px;
+    height: auto;
     position: absolute;
     bottom: 0;
     left: 634px; }
@@ -6345,6 +6346,11 @@ hr {
   @media only screen and (max-width: 1229px) {
     .about__info-img {
       width: 100%; } }
+  @media only screen and (max-width: 767px) {
+    .about__info-img {
+      display: block;
+      max-width: 360px;
+      margin: 0 auto; } }
   .about__info-text {
     line-height: 36px;
     font-weight: 400;
@@ -6452,7 +6458,9 @@ hr {
       border-color: #2c8eca; }
   .service__item-img {
     width: 100%;
-    height: 295px; }
+    height: 295px;
+    object-fit: cover;
+    object-position: center; }
     @media only screen and (max-width: 1229px) {
       .service__item-img {
         height: 173px; } }
@@ -7085,3 +7093,214 @@ hr {
         float: none;
         width: 100%;
         margin-top: 15px; } }
+
+/* =========================================================================
+   Service pages — modern layout (svc-*)
+   Полностью независимый набор правил для /services/*.html.
+   Старые .service-* / .slider* классы остаются, но новый шаблон их не использует.
+   ========================================================================= */
+
+.svc-page {
+  background: #f4f4f2;
+  color: #1a1a1a;
+  font-family: 'Fira Sans Book', 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6; }
+
+.svc-header {
+  background: #fff;
+  border-bottom: 1px solid #e8e8e6; }
+.svc-header__row {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; }
+.svc-header__left {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  flex-wrap: wrap; }
+.svc-header__back {
+  font-size: 14px;
+  color: #2c8eca !important;
+  text-decoration: none; }
+.svc-header__back:hover { text-decoration: underline; }
+.svc-header__brand {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a1a1a !important;
+  text-decoration: none; }
+.svc-header__role {
+  font-size: 14px;
+  color: #6b6b6b; }
+.svc-header__phone {
+  font-size: 16px;
+  font-weight: 500;
+  color: #2c8eca !important;
+  text-decoration: none;
+  white-space: nowrap; }
+
+.svc-hero {
+  background: #fff;
+  padding: 40px 24px 32px; }
+.svc-hero__inner {
+  max-width: 1100px;
+  margin: 0 auto; }
+.svc-breadcrumb {
+  font-size: 13px;
+  color: #6b6b6b;
+  margin-bottom: 18px; }
+.svc-breadcrumb a {
+  color: #2c8eca !important;
+  text-decoration: none; }
+.svc-breadcrumb a:hover { text-decoration: underline; }
+.svc-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 36px;
+  align-items: start; }
+@media (max-width: 1099px) {
+  .svc-hero__grid {
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 24px; } }
+@media (max-width: 767px) {
+  .svc-hero__grid {
+    grid-template-columns: 1fr;
+    gap: 20px; } }
+.svc-hero__title {
+  font-size: 36px;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.15;
+  margin: 0 0 14px;
+  letter-spacing: -0.01em; }
+@media (max-width: 767px) {
+  .svc-hero__title { font-size: 28px; } }
+.svc-hero__intro {
+  font-size: 17px;
+  color: #5a5a5a;
+  line-height: 1.55;
+  margin: 0 0 22px;
+  max-width: 560px; }
+.svc-hero__actions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap; }
+.svc-cta {
+  background: #1f7eb8;
+  color: #fff !important;
+  padding: 15px 28px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color .15s ease; }
+.svc-cta:hover { background: #185f8a; text-decoration: none; }
+.svc-hero__phone-secondary {
+  color: #6b6b6b;
+  font-size: 14px; }
+.svc-hero__phone-secondary a {
+  color: #2c8eca !important;
+  text-decoration: none; }
+.svc-hero__phone-secondary a:hover { text-decoration: underline; }
+.svc-hero__media {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  background: #f0eee8; }
+@media (max-width: 767px) {
+  .svc-hero__media {
+    max-width: 360px;
+    margin: 0 auto; } }
+
+.svc-content {
+  background: #fff;
+  padding: 24px 24px 48px; }
+.svc-content__inner {
+  max-width: 720px;
+  margin: 0 auto; }
+.svc-content__heading {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 28px 0 14px;
+  padding-top: 14px;
+  border-top: 1px solid #efefee; }
+.svc-content__body {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.75; }
+.svc-content__body br + br { display: none; } /* убираем лишние двойные переносы */
+
+.svc-related {
+  background: #f4f4f2;
+  padding: 36px 24px; }
+.svc-related__inner {
+  max-width: 1100px;
+  margin: 0 auto; }
+.svc-related__heading {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b6b6b;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 0 0 16px; }
+.svc-related__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px; }
+@media (max-width: 599px) {
+  .svc-related__grid { grid-template-columns: 1fr; } }
+.svc-related__card {
+  background: #fff;
+  border: 1px solid #e8e8e6;
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 15px;
+  color: #2b2b2b !important;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  transition: border-color .15s ease, transform .15s ease; }
+.svc-related__card:hover {
+  border-color: #2c8eca;
+  text-decoration: none;
+  transform: translateY(-1px); }
+.svc-related__arrow { color: #2c8eca; }
+
+.svc-footer {
+  background: #1a1a1a;
+  color: #bbb;
+  padding: 24px; }
+.svc-footer__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 14px; }
+.svc-footer__title {
+  color: #fff;
+  margin: 0 0 4px; }
+.svc-footer__phones a {
+  color: #5dafe1 !important;
+  text-decoration: none; }
+.svc-footer__phones a:hover { text-decoration: underline; }
+.svc-footer__map-link {
+  color: #5dafe1 !important;
+  text-decoration: none;
+  white-space: nowrap; }
+.svc-footer__map-link:hover { text-decoration: underline; }

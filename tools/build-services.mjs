@@ -6,6 +6,7 @@
 // Поля в JSON, кроме bodyHtml, должны содержать только обычный текст —
 // никаких символов ", \, <, >, & (внутри JSON-LD они сломают разметку).
 // Поле bodyHtml допускает HTML (<br>, <strong> и т. п.).
+// Поле relatedHtml собирается автоматически — список ссылок на остальные услуги.
 
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname, resolve, join } from 'node:path';
@@ -25,13 +26,26 @@ const [services, template] = await Promise.all([
 
 await mkdir(outDir, { recursive: true });
 
+/** Собрать HTML-блок «Другие услуги» для конкретной услуги (без неё самой). */
+function buildRelated(currentSlug, all) {
+    return all
+        .filter(s => s.slug !== currentSlug)
+        .map(s => (
+            `<a href="/services/${s.slug}.html" class="svc-related__card">` +
+              `<span>${s.name}</span>` +
+              `<span class="svc-related__arrow" aria-hidden="true">→</span>` +
+            `</a>`
+        ))
+        .join('\n                ');
+}
+
 let count = 0;
 for (const svc of services) {
+    const ctx = { ...svc, relatedHtml: buildRelated(svc.slug, services) };
     let html = template;
-    for (const [key, value] of Object.entries(svc)) {
+    for (const [key, value] of Object.entries(ctx)) {
         html = html.replaceAll(`{{${key}}}`, value);
     }
-    // Проверка: остались ли необработанные плейсхолдеры
     const leftovers = html.match(/\{\{[\w]+\}\}/g);
     if (leftovers) {
         throw new Error(

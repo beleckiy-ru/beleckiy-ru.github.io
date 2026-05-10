@@ -30,12 +30,11 @@
     <meta name="twitter:image" content="https://beleckiy.ru/img/img-slider-1-og.jpg">
 
     <link rel="preconnect" href="https://mc.yandex.ru">
-    <link rel="preconnect" href="https://www.google.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/fonts/firasans-book-webfont.woff2" crossorigin>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;700&family=Open+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Open+Sans:wght@400;700&display=swap">
     <link rel="stylesheet" href="/css/style.css">
 
     <script type="application/ld+json">
@@ -73,84 +72,73 @@
     }
     </script>
 </head>
-<body class="service-page">
+<body class="svc-page">
 
-<header class="service-top">
-    <div class="container">
-        <div class="service-top__row">
-            <div>
-                <p class="service-top__back"><a href="/">← На главную</a></p>
-                <p class="service-top__brand"><a href="/"><span>Белецкий</span><br><b>Игорь Иванович</b></a></p>
-                <p class="service-top__subtitle">хирург высшей категории</p>
-            </div>
-            <div class="service-top__phones">
-                <a class="service-top__phone-link" href="tel:+73912028784" aria-label="Позвонить хирургу Белецкому">
-                    <img src="/img/icon-phone.png" alt="" width="86" height="86">
-                </a>
-                <div class="service-top__phone-numbers">
-                    <a href="tel:+73912028784">+7 (391) 202-87-84</a>
-                    <a href="tel:+73912112113">+7 (391) 211-21-13</a>
-                </div>
-            </div>
+<header class="svc-header">
+    <div class="svc-header__row">
+        <div class="svc-header__left">
+            <a href="/" class="svc-header__back">← На главную</a>
+            <a href="/" class="svc-header__brand">Белецкий Игорь Иванович</a>
+            <span class="svc-header__role">пластический хирург</span>
         </div>
+        <a href="tel:+73912028784" class="svc-header__phone" aria-label="Позвонить хирургу Белецкому">+7 (391) 202-87-84</a>
     </div>
 </header>
 
-<main class="service-page-main">
-    <div class="container">
-        <nav class="service-breadcrumb" aria-label="Навигация по сайту">
-            <a href="/">Главная</a> › <a href="/#services">Услуги</a> › <span aria-current="page">Пластика грыжи</span>
-        </nav>
-        <div class="service-page__panel">
-            <div class="slider">
-                <div class="slider__item">
-                    <div class="slider__img">
-                        <img src="/img/img-slider-1-md.webp" alt="Пластика грыжи передней брюшной стенки" loading="lazy">
-                        <hr class="slider__hr">
-                    </div>
-                    <div class="slider__text">
-                        <h1 class="slider__text-title">Пластика грыжи</h1>
-                        <div class="slider__text-info">
-                            Пластика пупочной грыжи, грыж белой линии живота сетчатым эндопротезом через малозаметный разрез в пупке. Пластика паховых грыж сетчатым эндопротезом небольшим паховым доступом. Пребывание в стационаре менее суток.<br>
-Пластика послеоперационных вентральных грыж по оригинальной методике с целью уменьшения реабилитационного периода. Нахождение в клинике 2-3 дня.
-                        </div>
-                        <div class="slider__text-footer">
-                            Запишитесь на приём к специалисту:
-                            <a href="tel:+73912028784" class="slider__text-link slider__text-link--first">+7 (391) 202-87-84</a>
-                            <a href="tel:+73912112113" class="slider__text-link">+7 (391) 211-21-13</a>
-                        </div>
+<main>
+    <section class="svc-hero">
+        <div class="svc-hero__inner">
+            <nav class="svc-breadcrumb" aria-label="Навигация по сайту">
+                <a href="/">Главная</a> › <a href="/#services">Услуги</a> › <span aria-current="page">Пластика грыжи</span>
+            </nav>
+            <div class="svc-hero__grid">
+                <div class="svc-hero__copy">
+                    <h1 class="svc-hero__title">Пластика грыжи</h1>
+                    <p class="svc-hero__intro">Пластика грыж передней брюшной стенки сетчатым эндопротезом. Малозаметные разрезы, короткий срок пребывания в клинике.</p>
+                    <div class="svc-hero__actions">
+                        <a href="tel:+73912028784" class="svc-cta">Записаться на приём</a>
+                        <span class="svc-hero__phone-secondary">или <a href="tel:+73912112113">+7 (391) 211-21-13</a></span>
                     </div>
                 </div>
+                <img class="svc-hero__media" src="/img/img-slider-1-md.webp" alt="Пластика грыжи передней брюшной стенки" loading="lazy">
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="svc-content">
+        <div class="svc-content__inner">
+            <h2 class="svc-content__heading">Что входит</h2>
+            <div class="svc-content__body">
+                Пластика пупочной грыжи, грыж белой линии живота сетчатым эндопротезом через малозаметный разрез в пупке. Пластика паховых грыж сетчатым эндопротезом небольшим паховым доступом. Пребывание в стационаре менее суток.<br>
+Пластика послеоперационных вентральных грыж по оригинальной методике с целью уменьшения реабилитационного периода. Нахождение в клинике 2-3 дня.
+            </div>
+        </div>
+    </section>
+
+    <section class="svc-related" aria-labelledby="related-heading">
+        <div class="svc-related__inner">
+            <h2 class="svc-related__heading" id="related-heading">Другие услуги</h2>
+            <div class="svc-related__grid">
+                <a href="/services/abdominoplastika.html" class="svc-related__card"><span>Абдоминопластика</span><span class="svc-related__arrow" aria-hidden="true">→</span></a>
+                <a href="/services/mammoplastika.html" class="svc-related__card"><span>Маммопластика</span><span class="svc-related__arrow" aria-hidden="true">→</span></a>
+                <a href="/services/sosudistaya-hirurgiya.html" class="svc-related__card"><span>Сосудистая хирургия</span><span class="svc-related__arrow" aria-hidden="true">→</span></a>
+                <a href="/services/endoskopicheskaya-hirurgiya.html" class="svc-related__card"><span>Эндоскопическая хирургия</span><span class="svc-related__arrow" aria-hidden="true">→</span></a>
+            </div>
+        </div>
+    </section>
 </main>
 
-<footer class="footer" id="contacts">
-    <div class="footer__bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-6 footer__col">
-                    <div class="footer__col-title">
-                        Телефоны для записи:
-                    </div>
-                    <div class="footer__col-text">
-                        <a href="tel:+73912028784">+7 (391) 202-87-84</a>
-                        <a href="tel:+73912112113">+7 (391) 211-21-13</a>
-                    </div>
-                </div>
-                <div class="col-xs-6 footer__col">
-                    <div class="footer__col-title">
-                        Часы работы клиники:
-                    </div>
-                    <div class="footer__col-text">
-                        <span>пн-сб: 08:00 — 20:00</span>
-                        <span>вс: выходной</span>
-                    </div>
-                </div>
-            </div>
-            <p class="footer__contacts-back"><a href="/#contacts">Карта проезда →</a></p>
+<footer class="svc-footer">
+    <div class="svc-footer__inner">
+        <div>
+            <p class="svc-footer__title">Запись на приём</p>
+            <p class="svc-footer__phones">
+                <a href="tel:+73912028784">+7 (391) 202-87-84</a> ·
+                <a href="tel:+73912112113">+7 (391) 211-21-13</a>
+            </p>
+            <p>пн–сб: 08:00 – 20:00 · проспект Мира, 93, Красноярск</p>
         </div>
+        <a href="/#contacts" class="svc-footer__map-link">Карта проезда ↗</a>
     </div>
 </footer>
 
