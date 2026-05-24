@@ -7240,6 +7240,10 @@ hr {
   color: #333;
   line-height: 1.75;
   max-width: 620px; }
+.svc-content__body p {
+  margin: 0 0 16px; }
+.svc-content__body p:last-child {
+  margin-bottom: 0; }
 .svc-content__body br + br { display: none; } /* убираем лишние двойные переносы */
 
 .svc-related {
