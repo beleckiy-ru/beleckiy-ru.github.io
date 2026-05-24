@@ -32,7 +32,7 @@ jobs:
 
       - name: Minify HTML (in-place)
         run: |
-          for f in index.html services/*.html; do
+          for f in index.html privacy.html services/*.html; do
             html-minifier-terser \
               --collapse-whitespace --remove-comments \
               --minify-css true --minify-js true \
@@ -43,7 +43,7 @@ jobs:
         run: |
           mkdir -p _site
           cp -r css fonts img services _site/
-          cp index.html robots.txt sitemap.xml _site/
+          cp index.html privacy.html robots.txt sitemap.xml _site/
 
       - name: Check directory content
         run: |

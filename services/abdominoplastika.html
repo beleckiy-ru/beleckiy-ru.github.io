@@ -147,7 +147,34 @@
         </div>
         <a href="/#contacts" class="svc-footer__map-link">Карта проезда ↗</a>
     </div>
+    <div class="svc-footer__legal">
+        <p class="svc-footer__legal-warning">Имеются противопоказания. Необходима консультация специалиста.</p>
+        <p class="svc-footer__legal-note">
+            Материалы, размещённые на данной странице, носят информационный характер и предназначены
+            для образовательных целей. Посетители сайта не должны использовать их в качестве медицинских
+            рекомендаций. Определение диагноза и выбор методики лечения остаётся исключительной прерогативой
+            вашего лечащего врача.
+        </p>
+        <p class="svc-footer__legal-org">
+            Услуги оказывает ООО «Центр пластической хирургии» (ООО «ЦПХ»), ОГРН 1202400003420,
+            ИНН 2464151821, адрес: 660017, г. Красноярск, пр. Мира, д. 93, помещ. 15.
+            Медицинская деятельность осуществляется на основании лицензии
+            № Л041-01019-24/00359556 от 13.11.2020, выданной Министерством здравоохранения Красноярского края.
+        </p>
+        <p class="svc-footer__legal-links"><a href="/privacy.html">Политика обработки персональных данных</a></p>
+    </div>
 </footer>
+
+<div class="cookie-banner" id="cookieBanner" hidden>
+    <p class="cookie-banner__text">
+        Мы используем файлы cookie и сервисы аналитики для работы сайта и улучшения его удобства.
+        Оставаясь на сайте, вы соглашаетесь с <a href="/privacy.html">политикой обработки персональных данных</a>.
+    </p>
+    <button type="button" class="cookie-banner__btn" id="cookieAccept">Принять</button>
+</div>
+<script>
+(function(){try{if(localStorage.getItem('cookieConsent')==='1')return;var b=document.getElementById('cookieBanner');if(!b)return;b.hidden=false;document.getElementById('cookieAccept').addEventListener('click',function(){try{localStorage.setItem('cookieConsent','1');}catch(e){}b.hidden=true;});}catch(e){}})();
+</script>
 
 <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(52117360, "init", { id:52117360, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/52117360" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
 
