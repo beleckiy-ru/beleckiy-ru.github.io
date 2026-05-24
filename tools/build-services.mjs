@@ -39,9 +39,20 @@ function buildRelated(currentSlug, all) {
         .join('\n                ');
 }
 
+/** Собрать статью услуги из массива секций {h2, html}. */
+function buildArticle(sections) {
+    return sections
+        .map(s => `<h2 class="svc-article__title">${s.h2}</h2>\n                ${s.html}`)
+        .join('\n                ');
+}
+
 let count = 0;
 for (const svc of services) {
-    const ctx = { ...svc, relatedHtml: buildRelated(svc.slug, services) };
+    const ctx = {
+        ...svc,
+        relatedHtml: buildRelated(svc.slug, services),
+        articleHtml: buildArticle(svc.article || []),
+    };
     let html = template;
     for (const [key, value] of Object.entries(ctx)) {
         html = html.replaceAll(`{{${key}}}`, value);
