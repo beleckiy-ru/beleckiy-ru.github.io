@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0   # полная история — нужна для дат lastmod в sitemap
 
       - name: Install dependencies
         run: |
@@ -19,6 +21,9 @@ jobs:
 
       - name: Build service pages from template
         run: node tools/build-services.mjs
+
+      - name: Generate sitemap (lastmod from git)
+        run: node tools/build-sitemap.mjs
 
       - name: Optimize images
         run: |
