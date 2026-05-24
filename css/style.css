@@ -7396,3 +7396,36 @@ hr {
     @media only screen and (max-width: 767px) {
       .principles__item-text {
         font-size: 14px; } }
+
+  .principles__reviews {
+    margin-top: 46px; }
+    @media only screen and (max-width: 767px) {
+      .principles__reviews {
+        margin-top: 34px; } }
+  .principles__reviews-text {
+    font-family: "Fira Sans Book", sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+    color: #1a1a1a;
+    margin: 0 0 16px; }
+    @media only screen and (max-width: 767px) {
+      .principles__reviews-text {
+        font-size: 15px; } }
+  .principles__reviews-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px; }
+  .principles__reviews-links a {
+    display: inline-block;
+    border: 1px solid #2c8eca;
+    border-radius: 6px;
+    padding: 9px 18px;
+    font-family: "Fira Sans Book", sans-serif;
+    font-size: 15px;
+    color: #2c8eca !important;
+    text-decoration: none !important;
+    -webkit-transition: background-color .15s ease, color .15s ease;
+    transition: background-color .15s ease, color .15s ease; }
+    .principles__reviews-links a:hover, .principles__reviews-links a:focus {
+      background-color: #2c8eca;
+      color: #fff !important; }
